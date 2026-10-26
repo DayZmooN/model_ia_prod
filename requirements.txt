@@ -5,3 +5,6 @@ scikit-learn
 tensorflow 
 jupyter 
 ipykernel
+keras_tuner
+tensorboard
+optuna
