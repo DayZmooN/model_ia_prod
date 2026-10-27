@@ -8,7 +8,7 @@
 # Justification : F1 du modèle final (0.8571) moins la marge de bruit (±0.0312 pour n=469),
 # arrondi à 0.82 → absorbe les variations aléatoires normales sans masquer une vraie
 # dégradation de performance.
-f1_min: 0.82
+f1_min: 0.95
 
 # Taille minimale du jeu de test
 # Justification : en dessous de 400 exemples, la marge de bruit dépasse ±0.035 et
