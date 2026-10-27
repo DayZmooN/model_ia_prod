@@ -1,5 +1,5 @@
 # Barrière qualité du modèle de classification
-# Utilisé par : scripts/check_quality.py
+# Utilisé par : check_quality.py
 #
 # Le script échoue (exit code 1) si model/metrics.json ne respecte pas ces seuils.
 # Il est pensé pour tourner en CI/CD avant un build Docker ou un déploiement.
