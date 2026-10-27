@@ -1,3 +1,42 @@
 model
 keras_tuner_results
 kt_films
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# --- Environnements virtuels ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Tests ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Backups et fichiers temporaires ---
+*.bak
+*.log
+*.tmp
+
+# --- Notebooks Jupyter (checkpoints) ---
+.ipynb_checkpoints/
+
+# --- Modèles lourds (à discuter - voir ci-dessous) ---
+# model/model.keras
+# model/vectoriseur.joblib

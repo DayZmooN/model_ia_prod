@@ -1,0 +1,16 @@
+# Barrière qualité du modèle de classification
+# Utilisé par : scripts/check_quality.py
+#
+# Le script échoue (exit code 1) si model/metrics.json ne respecte pas ces seuils.
+# Il est pensé pour tourner en CI/CD avant un build Docker ou un déploiement.
+
+# F1-score minimum sur le jeu de test
+# Justification : F1 du modèle final (0.8571) moins la marge de bruit (±0.0312 pour n=469),
+# arrondi à 0.82 → absorbe les variations aléatoires normales sans masquer une vraie
+# dégradation de performance.
+f1_min: 0.82
+
+# Taille minimale du jeu de test
+# Justification : en dessous de 400 exemples, la marge de bruit dépasse ±0.035 et
+# le F1 devient statistiquement peu fiable.
+test_size_min: 400
