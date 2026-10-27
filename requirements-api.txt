@@ -7,3 +7,5 @@ pytest
 httpx
 PyYAML
 langdetect
+keras
+tensorflow
