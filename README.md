@@ -37,7 +37,13 @@ Le modèle a été entraîné sur 2 346 résumés (1 200 horreur / 1 200 comédi
 - [Ce que j'ai appris en le construisant](#ce-que-jai-appris-en-le-construisant)
 - [Limites et pistes](#limites-et-pistes)
 
----
+## 📑 Documentation et Gouvernance du Projet
+
+Le suivi et les procédures opérationnelles sont formalisés dans les fichiers suivants :
+
+- [`PLAN.md`](./PLAN.md) : Planification détaillée et suivi de la charge de travail (31h).
+- [`PROCEDURE_MISE_EN_PRODUCTION.md`](./PROCEDURE_MISE_EN_PRODUCTION.md) : Règles de déploiement et journal des versions (SHA de commits, rollbacks).
+- [`FIN_DE_VIE.md`](./FIN_DE_VIE.md) : Plan de démantèlement des ressources Azure et relevé des coûts.
 
 ## Ce que fait l'API
 
