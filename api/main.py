@@ -97,5 +97,6 @@ def predict_movie(input_data: MovieInput):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur interne lors de la prédiction : {str(e)}")
 
-    def hello():
-        return{"message":"hello depuis la version sur Azure :)"}
+@app.get("/hello")
+def hello():
+    return{"message":"hello depuis la version sur Azure :)"}
