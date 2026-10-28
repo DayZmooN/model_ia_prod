@@ -31,11 +31,10 @@
 - **Fin de vie totale** : on retire **tout**, y compris le dépôt et les données.
   **Non appliquée ici** : le dépôt est le livrable.
 
-## D. Preuve d'application (à remplir en F1)
+## D. Preuve d'application (rempli à la fin)
 
-- [ ] Capture de `az containerapp list` vide
-- [ ] Capture de `az acr list` vide
-- [ ] Capture du coût cumulé Azure (Cost Management)
-- [ ] Capture de la suppression du groupe de ressources
+- [x] **Verification de suppression des ressources** : exécuté via la commande `az resource list --resource-group kryahiRG --output table` confirmant l'absence de l'application `film-api`, de l'environnement `karim-film-env` et du registre `karimregistry`[cite: 10].
+- [x] **Relève du coût cumulé** : validé sur Azure Cost Management pour un montant total de **0,06 €** (Registre de conteneurs : 0,06 € ; autres lignes < 0,01 €)[cite: 9].
+- [x] **Isolation du groupe de ressources** : suppression ciblée des 3 composants individuels réalisée afin de préserver les ressources partagées du groupe `kryahiRG`[cite: 10].
 
-_(Rempli le : **\_\_**)_
+_(Rempli le : **28/10/2026**)_

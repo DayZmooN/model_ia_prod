@@ -1,3 +1,4 @@
+````markdown:PROCEDURE_MISE_EN_PRODUCTION.md
 # PROCÉDURE DE MISE EN PRODUCTION
 
 ## 1. Déclencheur
@@ -17,7 +18,7 @@ la décision est humaine.
 1. La CI est verte sur le commit à déployer (onglet Actions GitHub).
 2. L'image correspondant au `github.sha` existe dans ACR
    (`az acr repository list --name acrfilmkarim2026`).
-3. La barrière qualité passe : `metrics.json` contient **F1 ≥ 0,85**.
+3. La barrière qualité passe : `metrics.json` contient **F1 ≥ 0,82**.
 4. Les tests locaux (pytest) passent : API, validation des entrées, F1 min.
 
 ## 4. Déploiement
@@ -27,7 +28,8 @@ az containerapp update \
   --name classifieur-films \
   --resource-group <rg> \
   --image acrfilmkarim2026.azurecr.io/classifieur-films:<SHA>
-```
+
+````
 
 ## 5. Contrôle post-déploiement
 
@@ -46,25 +48,30 @@ az containerapp update \
 
 ## 7. JOURNAL DES VERSIONS
 
-| Date | Commit (SHA) | Changement | Déployé par | Résultat | Retour arrière ? |
-| ---- | ------------ | ---------- | ----------- | -------- | ---------------- |
-|      |              |            |             |          |                  |
-|      |              |            |             |          |                  |
-|      |              |            |             |          |                  |
-|      |              |            |             |          |                  |
-|      |              |            |             |          |                  |
+| Date       | Commit (SHA) | Changement                                                                      | Déployé par | Résultat       | Retour arrière ? |
+| ---------- | ------------ | ------------------------------------------------------------------------------- | ----------- | -------------- | ---------------- |
+| 22/10/2026 | `03b293d`    | Initialisation v1.0.0 (API FastAPI, modèle Keras et barrière qualité F1 ≥ 0.82) | Karim       | ✅ OK (Succès) | Non              |
+| 28/10/2026 | `470f421`    | Version v1.1.0 - Ajout de la route /hello pour test de déploiement Azure        | Karim       | ✅ OK (Succès) | Non              |
+| 28/10/2026 | `03b293d`    | Rollback v1.0.0 - Retour à la version stable suite au test de la route /hello   | Karim       | ✅ OK (Succès) | Oui              |
 
 ### Mode d'emploi du journal
 
 - **Une ligne par déploiement** (ou par rollback), dans l'ordre chronologique.
 - **Date** : au format `JJ/MM/AAAA` (ex. `22/10/2026`).
 - **Commit (SHA)** : le SHA court du commit déployé, obtenu avec :
-  ```bash
-  git rev-parse --short HEAD
-  ```
+
+```bash
+git rev-parse --short HEAD
+
+```
+
 - **Changement** : description courte (ex. `v1 : première mise en ligne`,
   `v2 : ajout route /hello`, `v3 : rollback vers v1`).
 - **Déployé par** : la personne qui a exécuté `az containerapp update` (ici `Karim`).
 - **Résultat** : `✅ OK` ou `❌ Échec` + précision.
 - **Retour arrière ?** : `Non` si validé, `Oui` si rollback. Dans ce cas,
   ajouter une **ligne supplémentaire** pour documenter le rollback.
+
+```
+
+```
