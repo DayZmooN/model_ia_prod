@@ -58,6 +58,9 @@ def health_check():
 def read_root():
     return {"Hello": "World"}
 
+@app.get("/hello")
+def hello():
+    return{"message":"hello depuis la version sur Azure :)"}
 
 @app.post("/predict")
 def predict_movie(input_data: MovieInput):
@@ -96,7 +99,3 @@ def predict_movie(input_data: MovieInput):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur interne lors de la prédiction : {str(e)}")
-
-@app.get("/hello")
-def hello():
-    return{"message":"hello depuis la version sur Azure :)"}
